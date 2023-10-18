@@ -63,44 +63,50 @@ const sortByCategory = (categorySelected) => {
   document.querySelectorAll(".project").forEach((_project, i) => {
     _project.style.display = "none";
   });
-  
+
   document.querySelectorAll(".project").forEach((_project, i) => {
-    if (_project.getAttribute("categorieid") === categorySelected || categorySelected === "0") {
-      _project.style.display = "block"; 
+    if (
+      _project.getAttribute("categorieid") === categorySelected ||
+      categorySelected === "0"
+    ) {
+      _project.style.display = "block";
     }
   });
-  
 };
 
-if (sessionStorage.getItem("token")) { 
+if (sessionStorage.getItem("token")) {
   // Afficher le bandeau et le bouton modifier, changer "login" en "logout", et masquer les catégories
 
-  // afficher le bandeau du haut
-  document.querySelector(".banner").classList.add("logged")
+  // modifier la marge du header
+  document.querySelector("header").classList.add("logged-header");
 
-  // change le text du lien/button
-  document.querySelector("#login-logout a").innerHTML = "logout"
+  // afficher le bandeau du haut
+  document.querySelector(".banner").classList.add("logged-banner");
+
+  // changer le text du lien/button
+  document.querySelector("#login-logout a").innerHTML = "logout";
 
   // afficher les boutton modifier
-  document.querySelector(".logged-button").classList.add("logged")
+  document.querySelector(".logged-button").classList.add("logged");
 
   // masquer les catégories
-  document.querySelector(".categories").classList.add("hidden")
+  document.querySelector(".categories").classList.add("hidden");
 
   // si rester sur page d'accueil apres logout
-  document.querySelector("#login-logout a").setAttribute("href", "./index.html")
+  document
+    .querySelector("#login-logout a")
+    .setAttribute("href", "./index.html");
 
   // capte le click sur le lien pour vider le session storage et changer logout par login
   document.querySelector("#login-logout a").addEventListener("click", () => {
-    sessionStorage.clear()
-    document.getElementById("login-logout").innerHTML = "login"
+    sessionStorage.clear();
+    document.getElementById("login-logout").innerHTML = "login";
 
     // si rester sur page d'accueil apres logout
-    document.querySelector(".banner").classList.remove("logged")
-    document.querySelector(".logged-button").classList.remove("logged")
-    document.querySelector(".categories").classList.remove("hidden")
-  })
-
+    document.querySelector(".banner").classList.remove("logged");
+    document.querySelector(".logged-button").classList.remove("logged");
+    document.querySelector(".categories").classList.remove("hidden");
+  });
 } else {
-  console.log("oups... tu n'est pas connecter !!!");
+  console.log("tu n'est pas connecté !!!");
 }

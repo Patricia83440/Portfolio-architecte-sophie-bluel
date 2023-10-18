@@ -148,6 +148,10 @@ header {
 	margin: 50px 0
 }
 
+header.logged-header {
+	margin-top: 100px;
+}
+
 section {
 	margin: 140px 0
 }
@@ -313,8 +317,10 @@ footer nav ul {
 }
 
 button {
+	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 12px;
 	margin-right: 45px;
 	margin-bottom: 50px;
 	background-color: #1D6154;
@@ -331,6 +337,10 @@ button {
 }
 
 .logIn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
 	height: 36px;
 	top: 242px;
 	left: 669px;
@@ -342,26 +352,77 @@ button {
 	text-align: center;
 }
 
-.banner{
+#login-page {
+	display: flex;
+	justify-content: center;
+}
+
+#login {
+	width: 380px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 38px;
+}
+
+#login-page form {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+	align-items: center;
+}
+
+.form_connect {
+	margin: 0;
+}
+
+.input-block {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.input-block input {
+	height: 50px;
+	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+	border: none;
+	background: rgba(255, 255, 255, 1);
+	outline: none;
+}
+
+.word {
+	text-decoration: underline;
+}
+
+.banner {
 	height: 60px;
 	width: 100vw;
 	background-color: black;
-	color:white;
-	display:flex;
-	align-items: center;
-	justify-content: center;
-	gap: 12px;
-	opacity:0;
-	visibility: hidden;
-}
-
-.logged-button{
+	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 12px;
 	opacity: 0;
 	visibility: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+.logged-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+}
+
+.logged-banner {
+	opacity: 1;
+	visibility: visible;
 	position: absolute;
 }
 
@@ -373,11 +434,11 @@ button {
 
 .logged-button button {
 	background-color: transparent;
-	color:black;
-	padding:0;
-	margin:0;
-	font-weight:400;
-	font-size:14px;
+	color: black;
+	padding: 0;
+	margin: 0;
+	font-weight: 400;
+	font-size: 14px;
 	min-width: auto;
 }
 
@@ -392,4 +453,83 @@ button {
 .hidden {
 	visibility: hidden;
 	opacity: 0;
+}
+
+#fond{
+	position:fixed;
+	top:0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display:flex;
+	justify-content: center;
+	z-index: 299;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.rectangle {
+	position:absolute;
+	width: 630px;
+	max-height: 688px;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	top:50%;
+	transform:translateY(-50%);
+}
+
+.rectangle i {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 24px;
+	width: 24px;
+	top:10px;
+	right: 10px;
+}
+
+.rectangle .project-preview i{
+	background-color: black;
+	color: white;
+}
+
+.rectangle .project-preview{
+	position: relative;
+	width: 76px;
+}
+
+.galerie h2 {
+	width: 173px;
+	height: 30px;
+	top: 720px;
+	left: 634px;
+	font-family: Work Sans;
+	font-size: 26px;
+	font-weight: 400;
+	line-height: 30px;
+	letter-spacing: 0em;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 1);
+}
+
+.img-modale {
+	width: 78.12px;
+	height: 104.08px;
+	top: 796px;
+	left: 510.25px;
+}
+
+.modale-button {
+	width: 237px;
+	height: 36px;
+	top: 1267px;
+	left: 600px;
+	border-radius: 60px;
 }
