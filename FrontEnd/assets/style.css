@@ -409,7 +409,6 @@ button {
 	top: 0;
 }
 
-
 .logged-button {
 	display: flex;
 	align-items: center;
@@ -455,13 +454,13 @@ button {
 	opacity: 0;
 }
 
-#fond{
-	position:fixed;
-	top:0;
+#fond {
+	position: fixed;
+	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	display:flex;
+	display: flex;
 	justify-content: center;
 	z-index: 299;
 	align-items: center;
@@ -469,7 +468,7 @@ button {
 }
 
 .rectangle {
-	position:absolute;
+	position: absolute;
 	width: 630px;
 	max-height: 688px;
 	border-radius: 10px;
@@ -478,8 +477,16 @@ button {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	top:50%;
-	transform:translateY(-50%);
+	top: 50%;
+	transform: translateY(-50%);
+	align-items: center;
+}
+
+.rectangle h2{
+	margin-top: 60px;
+	margin-bottom: 50px;
+	color:black;
+	font-family:'Work Sans';
 }
 
 .rectangle i {
@@ -487,20 +494,42 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 24px;
-	width: 24px;
-	top:10px;
+	top: 10px;
 	right: 10px;
+	font-size: 10px;
+	width: 17px;
+	height: 17px;
+	border-radius: 2px;
 }
 
-.rectangle .project-preview i{
+.rectangle i:first-child{
+	font-size: 24px;
+	width: auto;
+	height: auto;
+	top:26px;
+	right:36px;
+}
+
+.rectangle .modale-gallery article i {
 	background-color: black;
 	color: white;
 }
 
-.rectangle .project-preview{
+.rectangle .modale-gallery article {
 	position: relative;
-	width: 76px;
+	width: 100%;
+}
+
+.modale-gallery{
+	display:grid;
+	grid-template-columns: repeat(5,72px);
+	row-gap: 30px;
+	column-gap: 10px;
+}
+
+.modale-gallery img{
+	width: 100%;
+
 }
 
 .galerie h2 {
@@ -508,7 +537,7 @@ button {
 	height: 30px;
 	top: 720px;
 	left: 634px;
-	font-family: Work Sans;
+	font-family: 'Work Sans';
 	font-size: 26px;
 	font-weight: 400;
 	line-height: 30px;
@@ -519,17 +548,16 @@ button {
 	background-color: rgba(0, 0, 0, 1);
 }
 
-.img-modale {
-	width: 78.12px;
-	height: 104.08px;
-	top: 796px;
-	left: 510.25px;
-}
-
 .modale-button {
 	width: 237px;
 	height: 36px;
-	top: 1267px;
-	left: 600px;
 	border-radius: 60px;
+	margin: 0;
+	margin-bottom: 45px;
+}
+
+hr{
+	border:1px solid rgba(179, 179, 179, 1);	
+	margin-top: 68px;
+	margin-bottom: 38px;
 }

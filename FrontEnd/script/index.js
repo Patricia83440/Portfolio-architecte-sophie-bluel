@@ -3,6 +3,8 @@ fetch("http://localhost:5678/api/works")
   .then((response) => response.json())
   .then((response) => {
     let gallery = document.getElementsByClassName("gallery");
+    let modaleGallery = document.getElementsByClassName("modale-gallery");
+
     response.forEach((_work) => {
       // console.log(_work);
       // Création des blocs HTML
@@ -24,6 +26,47 @@ fetch("http://localhost:5678/api/works")
 
       // Ajout du bloc projet à la gallerie
       gallery[0].appendChild(figure);
+
+      // Ajout des projets dans la modale
+      let article = document.createElement("article");
+      let imageModale = document.createElement("img");
+      let icon = document.createElement("i");
+
+      // Remplissage des blocs HTML avec les données
+      imageModale.setAttribute("src", _work.imageUrl);
+      imageModale.setAttribute("alt", _work.title);
+      icon.classList.add("fa-solid");
+      icon.classList.add("fa-trash-can");
+      icon.setAttribute("deleteIcon", "true");
+      icon.setAttribute("projectId", _work.id);
+
+      article.appendChild(imageModale);
+      article.appendChild(icon);
+
+      // Ajout du bloc projet à la gallerie
+      modaleGallery[0].appendChild(article);
+    });
+
+    //Supression du projet
+    document.querySelectorAll("article i").forEach((_button, i) => {
+      _button.addEventListener("click", (event) => {
+        let project = event.target;
+        let projectId = project.getAttribute("projectId");
+
+        const requestOptions = {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + sessionStorage.getItem("token"),
+          },
+        };
+
+        fetch(`http://localhost:5678/api/works/${projectId}`, requestOptions)
+          .then((response) => response.json())
+          .then((response) => {
+            // this is were the magic happend
+          });
+      });
     });
   })
   .catch((error) => console.log(error));
