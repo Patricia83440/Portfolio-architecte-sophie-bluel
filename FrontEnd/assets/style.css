@@ -454,7 +454,7 @@ button {
 	opacity: 0;
 }
 
-#fond {
+#fond, #fondAdd {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -560,4 +560,11 @@ hr{
 	border:1px solid rgba(179, 179, 179, 1);	
 	margin-top: 68px;
 	margin-bottom: 38px;
+}
+
+#rectangleIcon{
+	background-color: rgba(232, 241, 246, 1);
+	width: 420px;
+	height: 169px;
+	border-radius: 3px;
 }

@@ -153,3 +153,19 @@ if (sessionStorage.getItem("token")) {
 } else {
   console.log("tu n'est pas connecté !!!");
 }
+
+//Supression de la modale et fond
+document.getElementById("closeModale").addEventListener("click", (event) => {
+  document.getElementById("fond").classList.add("hidden");
+});
+
+//Enlever hidden à la classe fond en appuyant sur modifier
+document.getElementById("removeHidden").addEventListener("click", (event) => {
+  document.getElementById("fond").classList.remove("hidden");
+});
+
+//Je veux capter le click sur le bouton Ajouter 1 photo
+document.getElementById("addImg").addEventListener("click", (event) => {
+  document.getElementById("fond").classList.add("hidden");
+  document.getElementById("fondAdd").classList.remove("hidden");
+});
