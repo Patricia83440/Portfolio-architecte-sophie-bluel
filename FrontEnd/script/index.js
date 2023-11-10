@@ -89,7 +89,22 @@ fetch("http://localhost:5678/api/categories")
 
       // Ajout du bloc catégories
       categories.appendChild(paragraphe);
+
+      //Créer un élément HTML option - Mettre l'attribut value et le mettre catégorieId
+      //Texte de l'option catégorie .name
+      //Mettre élément option dans le select
+      let categorieSelect = document.getElementById("categorieSelect");
+      let option = document.createElement("option");
+      option.innerHTML = _categorie.name;
+      option.setAttribute("value", _categorie.name);
+
+      categorieSelect.appendChild(option);
     });
+
+    //Lorsque je clique sur le bouton valider
+    //j'affiche dans la console le titre et la catégorie
+    let option = document.getElementsByName("button");
+    console.log(categoriesSelect);
 
     // Tri par catégories
     document.querySelectorAll(".categorie-button").forEach((_button, i) => {

@@ -379,14 +379,18 @@ button {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	row-gap: 6px;
 }
 
-.input-block input {
+.input-block input, select {
+	display: flex;
+	justify-content: center;
 	height: 50px;
 	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
 	border: none;
 	background: rgba(255, 255, 255, 1);
 	outline: none;
+	padding-inline-start: 16px;
 }
 
 .word {
@@ -454,7 +458,8 @@ button {
 	opacity: 0;
 }
 
-#fond, #fondAdd {
+#fond,
+#fondAdd {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -482,11 +487,11 @@ button {
 	align-items: center;
 }
 
-.rectangle h2{
+.rectangle h2 {
 	margin-top: 60px;
 	margin-bottom: 50px;
-	color:black;
-	font-family:'Work Sans';
+	color: black;
+	font-family: 'Work Sans';
 }
 
 .rectangle i {
@@ -502,12 +507,12 @@ button {
 	border-radius: 2px;
 }
 
-.rectangle i:first-child{
+.rectangle i:first-child {
 	font-size: 24px;
 	width: auto;
 	height: auto;
-	top:26px;
-	right:36px;
+	top: 26px;
+	right: 36px;
 }
 
 .rectangle .modale-gallery article i {
@@ -520,14 +525,14 @@ button {
 	width: 100%;
 }
 
-.modale-gallery{
-	display:grid;
-	grid-template-columns: repeat(5,72px);
+.modale-gallery {
+	display: grid;
+	grid-template-columns: repeat(5, 72px);
 	row-gap: 30px;
 	column-gap: 10px;
 }
 
-.modale-gallery img{
+.modale-gallery img {
 	width: 100%;
 
 }
@@ -556,15 +561,78 @@ button {
 	margin-bottom: 45px;
 }
 
-hr{
-	border:1px solid rgba(179, 179, 179, 1);	
-	margin-top: 68px;
-	margin-bottom: 38px;
+hr {
+	border: 1px solid rgba(179, 179, 179, 1);
+	width: 100%;
 }
 
-#rectangleIcon{
+#rectangleIcon {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	background-color: rgba(232, 241, 246, 1);
 	width: 420px;
 	height: 169px;
 	border-radius: 3px;
+	row-gap: 6px;
+}
+
+#arrowLeft {
+	position:absolute;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	top: 26px;
+	left: 30px;
+	font-size: 21px;
+	border-radius: 2px;
+	border-style: none;
+}
+
+#iconImg {
+	position:static;
+	font-size: 76px;
+	border-radius: 3px;
+	color: rgba(185, 197, 204, 1);
+
+}
+
+#addPhoto {
+	margin: 0;
+	font-family: 'Work Sans';
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16px;
+	letter-spacing: 0em;
+	text-align: center;
+	color: rgba(48, 102, 133, 1);
+	background-color: rgba(185, 197, 204, 1);
+	width: 172px;
+
+}
+
+.rectangle .comment {
+	display: flex;
+	align-items: center;
+	width: 94px;
+	height: 12px;
+	top: 924px;
+	font-family: 'Work Sans';
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 12px;
+	letter-spacing: 0em;
+	text-align: center;
+	color: rgba(68, 68, 68, 1);
+}
+
+#form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 420px;
+	margin-top: 30px;
+	row-gap: 20px;
 }
